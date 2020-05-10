@@ -1,21 +1,18 @@
 package userApplication;
 
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import javax.imageio.ImageIO;
 
 import ithakimodem.*;
 
 public class userApplication {
-    public static final String FILES_PATH = "C:\\Users\\johns\\Desktop\\";
+    public static final String FILES_PATH = "/home/johnstef/output/";
     public static final String ECHO = "E0917\r";
-    public static final String IMAGE_ERROR_FREE = "M1711\r";
+    public static final String IMAGE_ERROR_FREE = "M6636\r";
     public static final String IMAGE_WITH_ERROR = "G8074\r";
     public static final String GPS = "P0850\r";
     public static final String ACK = "Q4701\r";
@@ -213,12 +210,12 @@ public class userApplication {
             for (int j = 0; j < imageByte.size(); j++)
                 img[j] = imageByte.get(j);
 
-            InputStream in = new ByteArrayInputStream(img);
-            BufferedImage bImageFromConvert = ImageIO.read(in);
             String imageString = FILES_PATH + "image_" + requestCode.replace('\r', '.') + "jpg";
             File outputfile = new File(imageString);
+            FileOutputStream os = new FileOutputStream(outputfile);
+            os.write(img);
+            os.close();
             System.out.println("Image saved at " + imageString);
-            ImageIO.write(bImageFromConvert, "jpg", outputfile);
 
         } catch (IOException e) {
             System.out.println("An error occurred.");
