@@ -129,7 +129,7 @@ public class userApplication {
     }
 
     /**
-     * Prints packets from ithaki server and exports them to packetsData.csv
+     * Prints packets from ithaki server and returns it as Packet object
      * 
      * @throws IOException
      */
@@ -300,7 +300,7 @@ public class userApplication {
     }
 
     /**
-     * @param gpggaList GPGGA object to create the T parameters
+     * @param gpggaList GPGGA objects to create the T parameters
      */
     private static void getGpsImage(ArrayList<GPGGA> gpggaList) {
         StringBuilder tPar = new StringBuilder();
