@@ -1,0 +1,78 @@
+\documentclass{article}
+\input{header.tex}
+\usepackage{float}
+\usepackage{subcaption}
+
+\title{Δίκτυα Υπολογιστών Ι - Session 2}
+\author{Στεφανίδης Ιωάννης}
+\date{ΑΕΜ: 9587}
+
+\graphicspath{{../graphs/session2}}
+
+\begin{document}
+
+\maketitle
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{G1.png}
+  \caption{Ιστόγραμμα G1}
+  \label{fig:G1}
+\end{figure}
+
+\begin{figure}[H]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.9\linewidth]{image_M9230.jpg}
+  \caption{E1}
+  \label{fig:sfig1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.9\linewidth]{image_G7703.jpg}
+  \caption{E2}
+  \label{fig:sfig2}
+\end{subfigure}
+\caption{Εικόνες απο κάμερα}
+\label{fig:fig}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{image_P3682T=225735403737T=225731403739T=225728403741T=225727403743.jpg}
+  \caption{Εικόνα GPS Μ1}
+  \label{fig:M1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{G2.png}
+  \caption{Ιστόγραμμα G2}
+  \label{fig:G2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{G3.png}
+  \caption{Bar chart G3}
+  \label{fig:G3}
+\end{figure}
+
+
+Όπως φαίνεται στο G3 η κατανομή πιθανότης του αριθμού επανεκπομπών είναι
+γεωμετρική.
+\\
+Για το υπολογισμό του $BER$, βρίσκουμε τα ολικά bytes που πήραμε $B_T = 85104$
+και τα πόσα από αυτά ήταν error bytes $B_E = 23056$. Άρα ορίζοντας $A =
+\frac{B_T}{B_E} = 0.271$, υπολογίζουμε το $$BER = 1 - A^{1 /16} = 0.078$$
+
+\pagebreak
+\paragraph{Κωδικοί session}\hfill\\
+ECHO -> E5390\\
+IMAGE ERROR FREE -> M9230\\
+IMAGE WITH ERROR -> G7703\\
+GPS -> P3682\\
+ACK -> Q4252\\
+NACK -> R1594\\
+
+\end{document}
